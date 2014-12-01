@@ -26,15 +26,15 @@ function barChart(dataUrl, seriesName, seriesData) {
               crosshairs: false
           }
       }
-  $.getJSON(dataUrl, function(data) {
+  jQuery.getJSON(dataUrl, function(data) {
     yaxis = [];
     dataArray = []
-    $.each([seriesData], function(key, name) {
+    jQuery.each([seriesData], function(key, name) {
       dataArray[name] = []
       options.series[key] = [{}]
       options.series[key].data = []
       options.series[key].name = []
-      $.each(data, function(i,value) {
+      jQuery.each(data, function(i,value) {
         nameVal = value[seriesName]
         dataArray[name].push(value[name]);
         yaxis.push([nameVal])
